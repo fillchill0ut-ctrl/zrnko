@@ -87,8 +87,8 @@ PRAVIDLA STYLU:
 - Česky, spisovně, krátké jasné věty, oslovuj čtenáře „ty“. Vysvětluj příčiny a souvislosti, ne jen fakta.
 - Nepoužívej pomlčky jako vsuvky, rétorické triky typu „nejde o X, ale o Y“ ani fráze jako „stojí za zmínku“.
 FORMÁT:
-- 5 karet. Každá karta: "h" (krátký nadpis), "p" (pole se 2 odstavci po 2 až 4 větách).
-- Ve 2 kartách přidej "an": přirovnání z běžného života, které věc pomůže představit.
+- 6 karet. Každá karta: "h" (krátký nadpis), "p" (pole se 3 odstavci po 3 až 4 větách). Lekce má být poctivě dlouhá a vysvětlující: každý odstavec přidá novou informaci nebo vysvětlí proč, žádné opakování ani vata.
+- Ve 2 až 3 kartách přidej "an": přirovnání z běžného života, které věc pomůže představit.
 - Ve 2 kartách přidej "ln": jedna až dvě věty, jak karta souvisí s předchozí kartou.
 - V 1 nebo 2 kartách můžeš přidat "tip": krátká ověřená zajímavost.
 - Poslední karta má "remember": shrnutí celé lekce do 1 až 2 vět.
@@ -96,10 +96,10 @@ FORMÁT:
 - Kvíz: 5 otázek. Každá má "q", "a" (4 možnosti), "c" (index správné odpovědi 0 až 3), "why" (1 věta vysvětlení). Poslední otázka je typu pravda/nepravda: "a": ["Pravda","Nepravda"].
 - Špatné odpovědi musí být věrohodné, ale jednoznačně špatné. Odpověď musí jít z textu lekce.
 Odpovídej POUZE platným JSON objektem:
-{"cat":"…","title":"…","sub":"jedna věta podtitulu","cards":[{"h":"…","p":["…","…"],"an":"…","ln":"…","tip":"…"},…,{"h":"…","p":["…","…"],"remember":"…"}],"quiz":[{"q":"…","a":["…","…","…","…"],"c":0,"why":"…"},…]}`;
+{"cat":"…","title":"…","sub":"jedna věta podtitulu","cards":[{"h":"…","p":["…","…","…"],"an":"…","ln":"…","tip":"…"},…,{"h":"…","p":["…","…","…"],"remember":"…"}],"quiz":[{"q":"…","a":["…","…","…","…"],"c":0,"why":"…"},…]}`;
 
 const EXAMPLE = `Ukázka jedné karty v požadovaném stylu:
-{"h":"Roztančená voda","p":["Molekula vody se chová jako malý magnet: na jedné straně je trochu kladná, na druhé trochu záporná. Elektrické pole mikrovln mění směr miliardkrát za sekundu a molekuly vody se pořád natáčejí podle něj.","Přitom do sebe narážejí a třou se o okolní molekuly. Ten pohyb se mění v **teplo**. Proto se nejrychleji ohřívá jídlo, které obsahuje hodně vody."],"an":"Představ si sál plný lidí, kterým někdo miliardkrát za sekundu zavelí „čelem vzad“. Pořád by do sebe vráželi a brzy by se všichni zapotili."}`;
+{"h":"Roztančená voda","p":["Molekula vody se chová jako malý magnet: na jedné straně je trochu kladná, na druhé trochu záporná. Elektrické pole mikrovln mění směr miliardkrát za sekundu a molekuly vody se pořád natáčejí podle něj.","Přitom do sebe narážejí a třou se o okolní molekuly. Ten pohyb se mění v **teplo**. Proto se nejrychleji ohřívá jídlo, které obsahuje hodně vody, a suchý talíř zůstane chladnější.","Proto se v mikrovlnce špatně rozmrazuje. Molekuly vody jsou v ledu pevně vázané v krystalu a nemohou se natáčet, takže led se ohřívá mnohem pomaleji než voda. Kde už roztál, voda se pak rychle ohřeje, a proto bývají okraje horké a střed zmrzlý."],"an":"Představ si sál plný lidí, kterým někdo miliardkrát za sekundu zavelí „čelem vzad“. Pořád by do sebe vráželi a brzy by se všichni zapotili."}`;
 
 async function writeLesson(topic) {
   const user = `Téma lekce: ${topic.t}
@@ -162,7 +162,7 @@ function validate(l, topic) {
     for (const k of ["an", "ln", "tip", "remember"]) { const v = s(c[k], 600); if (v) o[k] = v; }
     return o;
   }).filter(c => c.p.length);
-  if (cards.length < 4 || cards.length > 7) throw new Error("Lekce má " + cards.length + " karet.");
+  if (cards.length < 5 || cards.length > 8) throw new Error("Lekce má " + cards.length + " karet.");
   if (!cards[cards.length - 1].remember) throw new Error("Chybí shrnutí na poslední kartě.");
   const quiz = (Array.isArray(l.quiz) ? l.quiz : []).filter(q => q && q.q && Array.isArray(q.a) && q.a.length >= 2 && q.a.length <= 4)
     .map(q => ({ q: s(q.q, 300), a: q.a.map(x => s(x, 160)).filter(Boolean), c: parseInt(q.c, 10), why: s(q.why, 400) || "" }))
@@ -235,8 +235,8 @@ function mockAnswer(messages) {
   if (sys.startsWith("Jsi redaktor")) return JSON.stringify(JSON.parse(messages[1].content).lekce);
   const topic = (messages[1].content.match(/Téma lekce: (.*)/) || [])[1] || "Zkouška";
   const cat = (messages[1].content.match(/Kategorie \(cat\): (\w+)/) || [])[1] || "veda";
-  const card = (i, last) => Object.assign({ h: "Karta " + i, p: ["Zkušební odstavec o tématu " + topic + " s **důležitým pojmem**.", "Druhý odstavec s [[pojmem|vysvětlení pojmu]]."] }, i === 1 ? { an: "Zkušební přirovnání." } : {}, i === 2 ? { ln: "Zkušební souvislost." } : {}, last ? { remember: "Zkušební shrnutí." } : {});
-  return JSON.stringify({ cat, title: topic, sub: "Zkušební lekce bez AI.", cards: [1, 2, 3, 4, 5].map(i => card(i, i === 5)),
+  const card = (i, last) => Object.assign({ h: "Karta " + i, p: ["Zkušební odstavec o tématu " + topic + " s **důležitým pojmem**.", "Druhý odstavec s [[pojmem|vysvětlení pojmu]].", "Třetí odstavec."] }, i === 1 ? { an: "Zkušební přirovnání." } : {}, i === 2 ? { ln: "Zkušební souvislost." } : {}, last ? { remember: "Zkušební shrnutí." } : {});
+  return JSON.stringify({ cat, title: topic, sub: "Zkušební lekce bez AI.", cards: [1, 2, 3, 4, 5, 6].map(i => card(i, i === 6)),
     quiz: [1, 2, 3, 4].map(i => ({ q: "Otázka " + i + "?", a: ["Správně", "Špatně A", "Špatně B", "Špatně C"], c: 0, why: "Protože." })).concat([{ q: "Pravda, nebo nepravda: tohle je zkouška.", a: ["Pravda", "Nepravda"], c: 0, why: "Je." }]) });
 }
 
