@@ -1,1 +1,217 @@
-[]
+[
+ {
+  "id": "d-2026-10-21-1",
+  "date": "2026-10-21",
+  "topic": "Proč je moře slané",
+  "ai": true,
+  "cat": "veda",
+  "title": "Proč je moře slané?",
+  "sub": "Jak se sůl dostala z pevniny do oceánu",
+  "cards": [
+   {
+    "h": "Zemské kameny a voda",
+    "p": [
+     "Když voda proudí přes horniny, chemicky je rozrušuje. Rozpouštějí se v ní ionty jako Na⁺ a Cl⁻, které se uvolňují z minerálů.",
+     "Tyto ionty jsou pak odnášeny povodími do řek. Proudí s vodou až k moři a přispívají k jeho slanosti."
+    ],
+    "an": "Představ si, že do čaje přidáš cukr – cukr se rozptýlí a voda ho nese dál, podobně jako voda nese rozpuštěné minerály."
+   },
+   {
+    "h": "Řeky jako dopravní pás",
+    "p": [
+     "Řeky sbírají rozpuštěné ionty z celé povrchu země a přivádějí je do oceánu. Denně se do moře dostane stovky milionů tun rozpuštěných látek.",
+     "Tento přísun je hlavním zdrojem soli v moři."
+    ],
+    "ln": "Tento proces navazuje na rozpuštění minerálů v předchozí kartě, kde se ionty poprvé uvolnily."
+   },
+   {
+    "h": "Co tvoří slanou chuť oceánu",
+    "p": [
+     "Největší podíl má **chlorid** (Cl⁻) a **sodík** (Na⁺), spolu tvoří asi 85 % rozpuštěných látek. Dále jsou zde hořčík, vápník a draslík.",
+     "Průměrná **salinita** oceánu je zhruba 35 ‰, což znamená 35 g soli na kilogram vody."
+    ],
+    "tip": "V jedné litrové sklenici mořské vody je přibližně 35 g soli, což odpovídá asi 7 čajovým lžičkám."
+   },
+   {
+    "h": "Jak se sůl hromadí",
+    "p": [
+     "Když se voda v oceánu odpařuje, zůstává za ní rozpuštěná sůl. Postupně se tak koncentrace zvyšuje.",
+     "**Hydrotermální ventily** na dně moře přidávají další minerály a některé soli se ukládají jako usazeniny – proces nazývaný **vysrážení**."
+    ],
+    "an": "Je to jako když necháš mísu slané vody na slunci – po odpaření zůstane na dně hrudka soli."
+   },
+   {
+    "h": "Stabilní slanost oceánu",
+    "p": [
+     "Příliv iontů z řek a odpařování vody jsou vyváženy procesy, které soli odstraňují, například tvorbou sedimentů.",
+     "Proto se koncentrace soli v oceánu mění jen velmi pomalu během milionů let."
+    ],
+    "ln": "Tento závěr doplňuje předchozí kartu, kde jsme viděli, jak se sůl hromadí a zároveň odstraňuje.",
+    "remember": "Mořská slanost vzniká díky dlouhodobému přísunu iontů z pevniny a jejich částečnému odstraňování, což udržuje stabilní koncentraci soli."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Odkud pochází většina solí v oceánu?",
+    "a": [
+     "Vulkanické erupce",
+     "Zvětrávání hornin",
+     "Atmosférické srážky",
+     "Mořské organismy"
+    ],
+    "c": 1,
+    "why": "Většina iontů ve vodě pochází ze zvětrávání hornin, které řeky odvádějí do moře."
+   },
+   {
+    "q": "Který iont je v mořské vodě nejhojnější?",
+    "a": [
+     "Na⁺",
+     "Cl⁻",
+     "Mg²⁺",
+     "Ca²⁺"
+    ],
+    "c": 1,
+    "why": "Chlorid (Cl⁻) je nejhojnějším iontem v mořské vodě, zatímco sodík (Na⁺) je nejhojnějším kationtem."
+   },
+   {
+    "q": "Jaký vliv má odpařování na slanost oceánu?",
+    "a": [
+     "Snižuje ji",
+     "Zvyšuje ji",
+     "Nemá vliv",
+     "Odstraňuje jen vodu, ne soli"
+    ],
+    "c": 1,
+    "why": "Odpařování odstraňuje čistou vodu, takže zůstává vyšší koncentrace solí."
+   },
+   {
+    "q": "Který proces pomáhá odstraňovat soli z oceánu?",
+    "a": [
+     "Vysrážení minerálů",
+     "Fotosyntéza",
+     "Říční odtok",
+     "Příliv a odliv"
+    ],
+    "c": 0,
+    "why": "Vysrážení vytváří pevné minerály, které se usazují na dně a tím snižují koncentraci rozpuštěných solí."
+   },
+   {
+    "q": "Salinita oceánu je všude stejná.",
+    "a": [
+     "Pravda",
+     "Nepravda"
+    ],
+    "c": 1,
+    "why": "Salinita se liší v závislosti na regionu, teplotě, odpařování a přítoku sladké vody."
+   }
+  ]
+ },
+ {
+  "id": "d-2026-10-21-2",
+  "date": "2026-10-21",
+  "topic": "Jak funguje srdce",
+  "ai": true,
+  "cat": "telo",
+  "title": "Jak funguje srdce?",
+  "sub": "Základní principy pumpování krve lidským srdcem",
+  "cards": [
+   {
+    "h": "Srdce jako pumpa",
+    "p": [
+     "Srdce je svalový orgán umístěný v hrudní dutině. Jeho hlavní úkol je **pumpovat krev** po celém těle.",
+     "Srdce se skládá ze **myokardu**, který se stahuje a uvolňuje v pravidelných cyklech. Tento cyklus se dělí na **systolu** a **diastolu**."
+    ],
+    "tip": "Průměrná srdeční frekvence v klidu je 60–100 tepů za minutu."
+   },
+   {
+    "h": "Čtyři komory",
+    "p": [
+     "Srdce má čtyři oddělené prostory: pravou a levou síň a pravou a levou komoru. Mezi síněmi a komorami jsou chlopně, které zajišťují jednosměrný tok krve.",
+     "Komory pumpují krev do plic a do těla, zatímco síně slouží jako rezervoár a pomáhají doplnit objem komor před stahováním."
+    ],
+    "an": "Představ si dům se čtyřmi místnostmi, kde každá místnost má jednosměrnou dveřní zámku – tak se krev pohybuje jen jedním směrem."
+   },
+   {
+    "h": "Krevní oběh",
+    "p": [
+     "Krev proudí dvěma hlavními okruzy: **systémový** oběh, který zásobuje tělesné tkáně, a **plicní** oběh, který okysličuje krev v plicích.",
+     "Oběhy jsou propojeny velkými cévami – aortou a plicní tepnou – a krev se vrací zpět do srdce žilami."
+    ],
+    "ln": "Tato souvislost ukazuje, proč se krev vrací do plic po každém srdečním cyklu.",
+    "tip": "Celkový objem krve v těle dosahuje zhruba 5 litrů."
+   },
+   {
+    "h": "Elektrický impuls",
+    "p": [
+     "Srdeční rytmus spouští **sinoatriální uzel**, který generuje elektrický signál. Signál se šíří přes **atrioventrikulární uzel** a dále do svalových vláken.",
+     "Díky tomuto impulsu se nejprve stahují síně (atrialní kontrakce) a následně komory (ventrikulární kontrakce)."
+    ],
+    "an": "Je to jako semafor, který nejprve rozsvítí zelenou pro chodce a pak pro auta – řídí, kdo se pohybuje a kdy.",
+    "ln": "To umožňuje synchronizaci stahování svalů a zabraňuje chaotickému pulzování."
+   },
+   {
+    "h": "Jak měřit srdeční činnost",
+    "p": [
+     "Nejčastějším způsobem je měření **tepové frekvence** na zápěstí nebo krku. Moderní nositelná zařízení používají optické senzory k detekci pulsu.",
+     "Další metodou je elektrokardiogram (EKG), který zaznamenává elektrickou aktivitu srdce a pomáhá diagnostikovat arytmie."
+    ],
+    "remember": "Srdce pumpuje krev díky čtyřem komorám, elektrickému impulsu a pravidelnému střídání systoly a diastoly."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Kolik komor má lidské srdce?",
+    "a": [
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "c": 2,
+    "why": "Srdce má pravou a levou síň i pravou a levou komoru, celkem čtyři."
+   },
+   {
+    "q": "Která fáze je charakterizována uvolněním srdečního svalu?",
+    "a": [
+     "Systola",
+     "Diastola",
+     "Atrialní kontrakce",
+     "Ventrikulární kontrakce"
+    ],
+    "c": 1,
+    "why": "Diastola je období, kdy se myokard uvolňuje a komory se plní krví."
+   },
+   {
+    "q": "Která chlopeň zabraňuje zpětnému toku krve z levé síně do levé komory?",
+    "a": [
+     "Mitrální",
+     "Aortální",
+     "Plicní",
+     "Trikuspidální"
+    ],
+    "c": 0,
+    "why": "Mitrální (bikuspidální) chlopeň odděluje levou síň od levé komory."
+   },
+   {
+    "q": "Kde vzniká první elektrický impuls, který řídí srdeční rytmus?",
+    "a": [
+     "Vagusový nerv",
+     "Frenický nerv",
+     "Sinoatriální uzel",
+     "Páteřní mícha"
+    ],
+    "c": 2,
+    "why": "Sinoatriální uzel v pravé síni generuje spontánní impuls, který spouští srdeční cyklus."
+   },
+   {
+    "q": "Průměrná srdeční frekvence v klidu je nižší než 50 tepů za minutu.",
+    "a": [
+     "Pravda",
+     "Nepravda"
+    ],
+    "c": 1,
+    "why": "V klidu se srdeční frekvence obvykle pohybuje mezi 60 a 100 tepy za minutu."
+   }
+  ]
+ }
+]
