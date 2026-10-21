@@ -2,8 +2,7 @@
 <html lang="cs"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#F2F4F1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1619" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Zrnko">
@@ -14,31 +13,23 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
 <title>Zrnko</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="light only">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
 /* Layout: jedna obrazovka jako mobilní appka (max 520 px); obsah scrolluje mezi horní lištou a spodní navigací/akcí. Styl Čítárna + ilustrované obálky. */
 :root{
-  --bg:#F2F4F1; --surface:#FFFFFF; --ink:#13232A; --muted:#5A6B70; --line:#DCE3E0;
-  --accent:#1D5A62; --accent-ink:#FFFFFF; --soft:#E2EDEC; --soft-ink:#1D5A62;
-  --flame:#EF5B32; --flame-soft:#FDE6DD; --good:#24855A; --good-soft:#DFF2E7; --bad:#C2413A; --bad-soft:#F9E1DF;
-  --tip:#FFF6DA; --tip-ink:#6B5313; --sky:#3A6FD8; --sun:#F2B544; --shadow:rgba(19,35,42,.10);
-  --f-display:"Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#18212E; --muted:#5B6574; --line:#E2E6EC;
+  --accent:#D2503F; --accent-ink:#FFFFFF; --soft:#E8EEF6; --soft-ink:#1F3A5F;
+  --flame:#D2503F; --flame-soft:#FBE6E2; --good:#24855A; --good-soft:#DFF2E7; --bad:#C2413A; --bad-soft:#F9E1DF;
+  --tip:#FFF5D9; --tip-ink:#5E4A12; --sky:#3A6FD8; --sun:#F2B544; --shadow:rgba(24,33,46,.08);
+  --f-display:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-ui:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-read:"Source Serif 4", Georgia, "Times New Roman", serif;
   --r:18px;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0E1619; --surface:#162227; --ink:#E6EEEC; --muted:#93A5A8; --line:#25353B;
-  --accent:#62B6B4; --accent-ink:#082022; --soft:#1B3236; --soft-ink:#8ED2CF;
-  --flame:#FF7C52; --flame-soft:#3A2219; --good:#4CC38A; --good-soft:#163628; --bad:#F2766D; --bad-soft:#3D1D1B;
-  --tip:#2F2810; --tip-ink:#F1D88A; --sky:#7FA8FF; --sun:#F2C24F; --shadow:rgba(0,0,0,.35); color-scheme:dark; } }
-:root[data-theme="dark"]{
-  --bg:#0E1619; --surface:#162227; --ink:#E6EEEC; --muted:#93A5A8; --line:#25353B;
-  --accent:#62B6B4; --accent-ink:#082022; --soft:#1B3236; --soft-ink:#8ED2CF;
-  --flame:#FF7C52; --flame-soft:#3A2219; --good:#4CC38A; --good-soft:#163628; --bad:#F2766D; --bad-soft:#3D1D1B;
-  --tip:#2F2810; --tip-ink:#F1D88A; --sky:#7FA8FF; --sun:#F2C24F; --shadow:rgba(0,0,0,.35); color-scheme:dark; }
 
 html,body{height:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:16px;-webkit-font-smoothing:antialiased;overflow:hidden}
@@ -440,7 +431,7 @@ function vToday(){
   return '<div class="screen">'+topbar()+'<main class="scroll pad">'+
     '<div class="today-head"><span class="date">'+esc(dt)+'</span><h1>Dnešní zrnko</h1></div>'+
     '<article class="hero">'+ill(l)+'<div class="body"><span class="eyebrow">'+esc(catName(l.cat))+'</span><h2>'+esc(l.title)+'</h2><p>'+esc(l.sub||"")+'</p>'+
-    '<div class="meta"><span>'+l.cards.length+' karet</span><span>'+l.quiz.length+' otázek</span><span>asi '+Math.max(3,Math.round(l.cards.length*1.1))+' min</span>'+(done?'<span class="done">Dnes hotovo</span>':'')+'</div>'+
+    '<div class="meta"><span>'+l.cards.length+' karet</span><span>'+l.quiz.length+' otázek</span><span>asi '+Math.max(3,Math.round(JSON.stringify(l.cards).length/1000)+1)+' min</span>'+(done?'<span class="done">Dnes hotovo</span>':'')+'</div>'+
     '<button class="btn" data-open="'+esc(l.id)+'">'+(done?"Projít znovu":"Začít")+' '+I.play+'</button></div></article>'+
     freshHTML(l)+weekBox()+cont+
     (next.length?'<h3 class="section-title">Další zrnka <button data-nav="library">Knihovna</button></h3><div class="hscroll">'+next.map(gcard).join("")+'</div>':'')+
@@ -502,7 +493,7 @@ function vSaved(){
 }
 
 var PROMPT = 'Vytvoř jednu vzdělávací lekci v češtině na téma: [SEM NAPIŠ TÉMA].\n'+
-'Pravidla: používej jen ověřená a obecně přijímaná fakta, nic si nedomýšlej, nejisté údaje vynech. Piš srozumitelně, krátkými větami, oslovuj čtenáře „ty“. Vysvětluj souvislosti a příčiny, ne jen fakta. 5 karet, každá 2 odstavce po 2 až 4 větách. Ve 2 kartách přidej „an“ (přirovnání z běžného života), ve 2 kartách „ln“ (jak karta souvisí s předchozí). Na konci 5 kvízových otázek, poslední typu pravda/nepravda. Tučné pojmy piš jako **pojem**.\n'+
+'Pravidla: používej jen ověřená a obecně přijímaná fakta, nic si nedomýšlej, nejisté údaje vynech. Piš srozumitelně, krátkými větami, oslovuj čtenáře „ty“. Vysvětluj souvislosti a příčiny, ne jen fakta. 6 karet, každá 3 odstavce po 2 až 4 větách. Ve 2 až 3 kartách přidej „an“ (přirovnání z běžného života), ve 2 kartách „ln“ (jak karta souvisí s předchozí). Na konci 5 kvízových otázek, poslední typu pravda/nepravda. Tučné pojmy piš jako **pojem**.\n'+
 'Odpověz POUZE platným JSON bez dalšího textu v tomto tvaru:\n'+
 '{"cat":"veda|telo|dejiny|literatura|umeni|jazyk|mytologie|sport|jak|priroda|vesmir|ekonomie","title":"Název","sub":"Jedna věta podtitulu","cards":[{"h":"Nadpis karty","p":["Odstavec s **tučným pojmem**.","Druhý odstavec."],"an":"Přirovnání (volitelné)","ln":"Souvislost (volitelné)","tip":"Zajímavost (volitelné)"},{"h":"…","p":["…","…"],"remember":"Shrnutí do 1 až 2 vět (jen u poslední karty)"}],"quiz":[{"q":"Otázka?","a":["Správná","Špatná","Špatná","Špatná"],"c":0,"why":"Krátké vysvětlení"},{"q":"Pravda, nebo nepravda: …","a":["Pravda","Nepravda"],"c":0,"why":"…"}]}';
 
