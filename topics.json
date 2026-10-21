@@ -1,0 +1,678 @@
+[
+{
+"cat": "veda",
+"t": "Proč je moře slané"
+},
+{
+"cat": "telo",
+"t": "Jak funguje srdce"
+},
+{
+"cat": "dejiny",
+"t": "Proč padla Západořímská říše"
+},
+{
+"cat": "literatura",
+"t": "Proč je Švejk slavný po celém světě"
+},
+{
+"cat": "umeni",
+"t": "Proč se renesance zrodila v Itálii"
+},
+{
+"cat": "jazyk",
+"t": "Odkud se vzal háček v češtině"
+},
+{
+"cat": "mytologie",
+"t": "Prométheus a ukradený oheň"
+},
+{
+"cat": "sport",
+"t": "Jak vznikl moderní fotbal"
+},
+{
+"cat": "jak",
+"t": "Jak funguje lednička"
+},
+{
+"cat": "priroda",
+"t": "Proč stromy na podzim shazují listí"
+},
+{
+"cat": "vesmir",
+"t": "Co je černá díra"
+},
+{
+"cat": "ekonomie",
+"t": "Jak vznikly peníze"
+},
+{
+"cat": "veda",
+"t": "Jak funguje evoluce"
+},
+{
+"cat": "telo",
+"t": "Proč máme husí kůži"
+},
+{
+"cat": "dejiny",
+"t": "Keltové v českých zemích"
+},
+{
+"cat": "literatura",
+"t": "Franz Kafka a jeho Praha"
+},
+{
+"cat": "umeni",
+"t": "Jak vznikl impresionismus"
+},
+{
+"cat": "jazyk",
+"t": "Proč má čeština hlásku ř"
+},
+{
+"cat": "mytologie",
+"t": "Pandořina skříňka"
+},
+{
+"cat": "sport",
+"t": "Proč má golf 18 jamek"
+},
+{
+"cat": "jak",
+"t": "Jak funguje dotykový displej"
+},
+{
+"cat": "priroda",
+"t": "Jak vznikají hory"
+},
+{
+"cat": "vesmir",
+"t": "Co víme o velkém třesku"
+},
+{
+"cat": "ekonomie",
+"t": "Jak funguje burza"
+},
+{
+"cat": "veda",
+"t": "Co je DNA a jak nese informace"
+},
+{
+"cat": "telo",
+"t": "Jak fungují antibiotika a proč přestávají fungovat"
+},
+{
+"cat": "dejiny",
+"t": "Velká Morava a Cyril s Metodějem"
+},
+{
+"cat": "literatura",
+"t": "Máchův Máj"
+},
+{
+"cat": "umeni",
+"t": "Alfons Mucha a secese"
+},
+{
+"cat": "jazyk",
+"t": "Esperanto: jazyk vymyšlený pro mír"
+},
+{
+"cat": "mytologie",
+"t": "Thor a severští bohové"
+},
+{
+"cat": "sport",
+"t": "Olympijské hry ve starověkém Řecku"
+},
+{
+"cat": "jak",
+"t": "Odkud se bere elektřina v zásuvce"
+},
+{
+"cat": "priroda",
+"t": "Proč jsou plameňáci růžoví"
+},
+{
+"cat": "vesmir",
+"t": "Proč je Mars červený"
+},
+{
+"cat": "ekonomie",
+"t": "Co je HDP a co neměří"
+},
+{
+"cat": "veda",
+"t": "Proč hoří oheň"
+},
+{
+"cat": "telo",
+"t": "Proč zíváme"
+},
+{
+"cat": "dejiny",
+"t": "Jan Hus a husité"
+},
+{
+"cat": "literatura",
+"t": "Babička Boženy Němcové"
+},
+{
+"cat": "umeni",
+"t": "Hvězdná noc Vincenta van Gogha"
+},
+{
+"cat": "jazyk",
+"t": "Proč angličtina nepíše, jak mluví"
+},
+{
+"cat": "mytologie",
+"t": "Kněžna Libuše a založení Prahy"
+},
+{
+"cat": "sport",
+"t": "Hokejové Nagano 1998"
+},
+{
+"cat": "jak",
+"t": "Jak funguje baterie v telefonu"
+},
+{
+"cat": "priroda",
+"t": "Jak ptáci najdou cestu na jih"
+},
+{
+"cat": "vesmir",
+"t": "Jak se rodí hvězdy"
+},
+{
+"cat": "ekonomie",
+"t": "Proč banky platí úroky"
+},
+{
+"cat": "veda",
+"t": "Jak vzniká duha"
+},
+{
+"cat": "telo",
+"t": "Jak vnímáme chuť"
+},
+{
+"cat": "dejiny",
+"t": "Bitva na Bílé hoře"
+},
+{
+"cat": "literatura",
+"t": "Proč je Shakespeare tak slavný"
+},
+{
+"cat": "umeni",
+"t": "Picasso a kubismus"
+},
+{
+"cat": "jazyk",
+"t": "Kolika jazyky se mluví na světě"
+},
+{
+"cat": "mytologie",
+"t": "Praotec Čech a hora Říp"
+},
+{
+"cat": "sport",
+"t": "Věra Čáslavská"
+},
+{
+"cat": "jak",
+"t": "Jak funguje QR kód"
+},
+{
+"cat": "priroda",
+"t": "Jak vznikají sopky"
+},
+{
+"cat": "vesmir",
+"t": "Z čeho jsou Saturnovy prstence"
+},
+{
+"cat": "ekonomie",
+"t": "Jak funguje bitcoin"
+},
+{
+"cat": "veda",
+"t": "Co je absolutní nula"
+},
+{
+"cat": "telo",
+"t": "Co v těle dělá adrenalin"
+},
+{
+"cat": "dejiny",
+"t": "Jak vzniklo Československo v roce 1918"
+},
+{
+"cat": "literatura",
+"t": "Homérova Odysseia"
+},
+{
+"cat": "umeni",
+"t": "Proč jsou gotické katedrály tak vysoké"
+},
+{
+"cat": "jazyk",
+"t": "Česká slova, která převzal svět"
+},
+{
+"cat": "mytologie",
+"t": "Krakonoš, pán hor"
+},
+{
+"cat": "sport",
+"t": "Jak funguje ofsajd"
+},
+{
+"cat": "jak",
+"t": "Jak funguje jaderná elektrárna"
+},
+{
+"cat": "priroda",
+"t": "Proč mají zebry pruhy"
+},
+{
+"cat": "vesmir",
+"t": "Jak se žije na Mezinárodní vesmírné stanici"
+},
+{
+"cat": "ekonomie",
+"t": "Složené úročení: osmý div světa"
+},
+{
+"cat": "veda",
+"t": "Proč led plave na vodě"
+},
+{
+"cat": "telo",
+"t": "Proč stárneme"
+},
+{
+"cat": "dejiny",
+"t": "Mnichovská dohoda 1938"
+},
+{
+"cat": "literatura",
+"t": "Don Quijote a boj s větrnými mlýny"
+},
+{
+"cat": "umeni",
+"t": "Michelangelo a Sixtinská kaple"
+},
+{
+"cat": "jazyk",
+"t": "Proč má čeština sedm pádů"
+},
+{
+"cat": "mytologie",
+"t": "Minotaurus a labyrint"
+},
+{
+"cat": "sport",
+"t": "Proč se v tenise počítá 15, 30, 40"
+},
+{
+"cat": "jak",
+"t": "Jak funguje fotoaparát v mobilu"
+},
+{
+"cat": "priroda",
+"t": "Jak spí delfíni"
+},
+{
+"cat": "vesmir",
+"t": "Co je polární záře"
+},
+{
+"cat": "ekonomie",
+"t": "Proč platíme daně"
+},
+{
+"cat": "veda",
+"t": "Jak fungují magnety"
+},
+{
+"cat": "telo",
+"t": "Co je alergie"
+},
+{
+"cat": "dejiny",
+"t": "Pražské jaro 1968"
+},
+{
+"cat": "literatura",
+"t": "Orwellův román 1984"
+},
+{
+"cat": "umeni",
+"t": "Jak funguje pražský orloj"
+},
+{
+"cat": "jazyk",
+"t": "Jak se děti učí mluvit"
+},
+{
+"cat": "mytologie",
+"t": "Epos o Gilgamešovi"
+},
+{
+"cat": "sport",
+"t": "Tour de France"
+},
+{
+"cat": "jak",
+"t": "Jak fungují jazykové modely umělé inteligence"
+},
+{
+"cat": "priroda",
+"t": "Jak jsou mravenci organizovaní"
+},
+{
+"cat": "vesmir",
+"t": "Proč jsou planety kulaté"
+},
+{
+"cat": "ekonomie",
+"t": "Proč vzniklo euro"
+},
+{
+"cat": "veda",
+"t": "Jaký je rozdíl mezi bakteriemi a viry"
+},
+{
+"cat": "telo",
+"t": "Proč nás bolí svaly po cvičení"
+},
+{
+"cat": "dejiny",
+"t": "Hedvábná stezka"
+},
+{
+"cat": "literatura",
+"t": "Malý princ"
+},
+{
+"cat": "umeni",
+"t": "Jak malíři objevili perspektivu"
+},
+{
+"cat": "jazyk",
+"t": "Znaková řeč není jen jedna"
+},
+{
+"cat": "mytologie",
+"t": "Vodníci v českých pověstech"
+},
+{
+"cat": "sport",
+"t": "Jak vznikl basketbal"
+},
+{
+"cat": "jak",
+"t": "Jak fungují bezkontaktní platby kartou"
+},
+{
+"cat": "priroda",
+"t": "Jak chytré jsou chobotnice"
+},
+{
+"cat": "vesmir",
+"t": "Kam doletěly sondy Voyager"
+},
+{
+"cat": "ekonomie",
+"t": "Nabídka a poptávka"
+},
+{
+"cat": "veda",
+"t": "Jak vzniká blesk a hrom"
+},
+{
+"cat": "telo",
+"t": "Jak oko vidí barvy"
+},
+{
+"cat": "dejiny",
+"t": "Proč Egypťané stavěli pyramidy"
+},
+{
+"cat": "literatura",
+"t": "Bratři Grimmové a jejich pohádky"
+},
+{
+"cat": "umeni",
+"t": "Jak mohl hluchý Beethoven skládat"
+},
+{
+"cat": "jazyk",
+"t": "Odkud pochází naše příjmení"
+},
+{
+"cat": "mytologie",
+"t": "Blaník a blaničtí rytíři"
+},
+{
+"cat": "sport",
+"t": "Šachy a jejich historie"
+},
+{
+"cat": "jak",
+"t": "Jak funguje 3D tisk"
+},
+{
+"cat": "priroda",
+"t": "Jak vznikají mraky a déšť"
+},
+{
+"cat": "vesmir",
+"t": "Jsme ve vesmíru sami?"
+},
+{
+"cat": "ekonomie",
+"t": "Jak funguje hypotéka"
+},
+{
+"cat": "veda",
+"t": "Co je radioaktivita"
+},
+{
+"cat": "telo",
+"t": "Co jsou krevní skupiny"
+},
+{
+"cat": "dejiny",
+"t": "Černá smrt: mor ve 14. století"
+},
+{
+"cat": "literatura",
+"t": "Bible kralická a čeština"
+},
+{
+"cat": "umeni",
+"t": "Smetanova Má vlast"
+},
+{
+"cat": "mytologie",
+"t": "Osiris a egyptská říše mrtvých"
+},
+{
+"cat": "sport",
+"t": "Proč je těžké uběhnout maraton pod dvě hodiny"
+},
+{
+"cat": "jak",
+"t": "Jak funguje rentgen"
+},
+{
+"cat": "priroda",
+"t": "Proč blednou korálové útesy"
+},
+{
+"cat": "vesmir",
+"t": "Jak vznikla Sluneční soustava"
+},
+{
+"cat": "ekonomie",
+"t": "Proč jsou diamanty dražší než voda"
+},
+{
+"cat": "veda",
+"t": "Jak funguje fotosyntéza"
+},
+{
+"cat": "telo",
+"t": "Jak funguje sluch"
+},
+{
+"cat": "dejiny",
+"t": "Jak Kolumbus doplul do Ameriky"
+},
+{
+"cat": "literatura",
+"t": "Jules Verne, spisovatel budoucnosti"
+},
+{
+"cat": "umeni",
+"t": "Dvořákova Novosvětská symfonie"
+},
+{
+"cat": "mytologie",
+"t": "Odkud se vzal Mikuláš"
+},
+{
+"cat": "jak",
+"t": "Jak funguje Bluetooth"
+},
+{
+"cat": "priroda",
+"t": "Jak si stromy pomáhají pod zemí"
+},
+{
+"cat": "vesmir",
+"t": "Proč Pluto už není planeta"
+},
+{
+"cat": "veda",
+"t": "Jak vznikla periodická tabulka prvků"
+},
+{
+"cat": "telo",
+"t": "Proč máme otisky prstů"
+},
+{
+"cat": "dejiny",
+"t": "Průmyslová revoluce"
+},
+{
+"cat": "umeni",
+"t": "Jak vznikl film a bratři Lumièrové"
+},
+{
+"cat": "jak",
+"t": "Jak se vyrábí papír"
+},
+{
+"cat": "priroda",
+"t": "Proč mají kočky svislé zorničky"
+},
+{
+"cat": "vesmir",
+"t": "Komety, meteory a padající hvězdy"
+},
+{
+"cat": "veda",
+"t": "Proč je v noci tma, když je hvězd tolik"
+},
+{
+"cat": "telo",
+"t": "Jak funguje trávení"
+},
+{
+"cat": "dejiny",
+"t": "Marie Terezie a její reformy"
+},
+{
+"cat": "umeni",
+"t": "Jak vznikl jazz"
+},
+{
+"cat": "jak",
+"t": "Proč ocelová loď neklesne ke dnu"
+},
+{
+"cat": "priroda",
+"t": "Jak vznikly jeskyně Moravského krasu"
+},
+{
+"cat": "veda",
+"t": "Co je entropie a proč se věci kazí"
+},
+{
+"cat": "telo",
+"t": "Proč se nám dělá špatně v autě"
+},
+{
+"cat": "dejiny",
+"t": "Tomáš Garrigue Masaryk"
+},
+{
+"cat": "jak",
+"t": "Jak funguje kompas"
+},
+{
+"cat": "priroda",
+"t": "Proč někteří ptáci neumí létat"
+},
+{
+"cat": "veda",
+"t": "Jak vědci zjišťují stáří zkamenělin"
+},
+{
+"cat": "dejiny",
+"t": "Přistání na Měsíci v roce 1969"
+},
+{
+"cat": "jak",
+"t": "Jak funguje solární panel"
+},
+{
+"cat": "veda",
+"t": "Proč voda vře v horách při nižší teplotě"
+},
+{
+"cat": "dejiny",
+"t": "Co byla studená válka"
+},
+{
+"cat": "jak",
+"t": "Jak funguje sklo a proč je průhledné"
+},
+{
+"cat": "veda",
+"t": "Co je zvuk a proč ve vesmíru neslyšíš výbuch"
+},
+{
+"cat": "dejiny",
+"t": "Francouzská revoluce"
+},
+{
+"cat": "jak",
+"t": "Jak funguje navigace v autě bez signálu"
+},
+{
+"cat": "dejiny",
+"t": "Jak vznikla demokracie v Athénách"
+},
+{
+"cat": "dejiny",
+"t": "Jan Amos Komenský, učitel národů"
+}
+]
