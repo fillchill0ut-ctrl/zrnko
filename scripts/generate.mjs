@@ -1,6 +1,6 @@
 // Zrnko – generátor denních lekcí.
-// Spouští ho GitHub Actions každé ráno. Píše lekce přes bezplatné API Mistral AI (klíč v secretu MISTRAL_API_KEY).
-// Volitelně umí i Groq (GROQ_API_KEY) nebo OpenRouter (OPENROUTER_API_KEY), když Mistral nejde.
+// Spouští ho GitHub Actions každé ráno. Píše lekce přes bezplatné API Groq (klíč v secretu GROQ_API_KEY).
+// Umí i Mistral (MISTRAL_API_KEY) nebo OpenRouter (OPENROUTER_API_KEY), pokud je v repozitáři jejich klíč.
 // Postup: vybere témata ze zásobníku (topics.json) → napíše lekci → druhý průchod ji zkontroluje
 // a opraví fakta → ověří formát → přidá do daily.json.
 // Zkušební běh bez AI: ZRNKO_MOCK=1 node scripts/generate.mjs
@@ -14,7 +14,7 @@ const PROVIDERS = [
   { name: "Mistral", key: process.env.MISTRAL_API_KEY, url: "https://api.mistral.ai/v1/chat/completions",
     models: ["mistral-large-latest", "mistral-medium-latest", "mistral-small-latest"] },
   { name: "Groq", key: process.env.GROQ_API_KEY, url: "https://api.groq.com/openai/v1/chat/completions",
-    models: ["llama-3.3-70b-versatile"] },
+    models: ["openai/gpt-oss-120b", "moonshotai/kimi-k2-instruct-0905", "llama-3.3-70b-versatile"] },
   { name: "OpenRouter", key: process.env.OPENROUTER_API_KEY, url: "https://openrouter.ai/api/v1/chat/completions",
     models: ["meta-llama/llama-3.3-70b-instruct:free"] }
 ].filter(p => p.key);
@@ -40,7 +40,7 @@ const usedTopics = new Set(daily.map(d => norm(d.topic)));
 // ---------- volání modelu ----------
 async function chat(messages, maxTokens) {
   if (MOCK) return mockAnswer(messages);
-  if (!PROVIDERS.length) throw new Error("Chybí klíč k AI. V repozitáři přidej secret MISTRAL_API_KEY (Settings → Secrets and variables → Actions).");
+  if (!PROVIDERS.length) throw new Error("Chybí klíč k AI. V repozitáři přidej secret GROQ_API_KEY (Settings → Secrets and variables → Actions).");
   let lastErr;
   for (const p of PROVIDERS) {
     for (const model of p.models) {
@@ -52,7 +52,7 @@ async function chat(messages, maxTokens) {
             headers: { "Authorization": "Bearer " + p.key, "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify({ model, messages, temperature: 0.4, max_tokens: maxTokens, response_format: { type: "json_object" } })
           });
-          if (res.status === 429) { lastErr = new Error(p.name + " " + model + ": limit požadavků (429)"); await sleep(15000); continue; }
+          if (res.status === 429) { lastErr = new Error(p.name + " " + model + ": limit požadavků (429)"); await sleep(30000); continue; }
           if (!res.ok) { lastErr = new Error(p.name + " " + model + ": HTTP " + res.status + " " + (await res.text()).slice(0, 300)); break; }
           const data = await res.json();
           const text = data?.choices?.[0]?.message?.content;
@@ -101,7 +101,7 @@ async function writeLesson(topic) {
   const user = `Téma lekce: ${topic.t}
 Kategorie (cat): ${topic.cat}${topic.n ? "\nPoznámka k tématu: " + topic.n : ""}
 Název lekce může být otázka nebo krátké tvrzení, ať čtenáře láká. ${EXAMPLE}`;
-  return parseJSON(await chat([{ role: "system", content: STYLE }, { role: "user", content: user }], 4000));
+  return parseJSON(await chat([{ role: "system", content: STYLE }, { role: "user", content: user }], 8000));
 }
 async function factCheck(lesson) {
   const sys = `Jsi pečlivý redaktor a ověřovatel faktů české vzdělávací aplikace. Dostaneš lekci ve formátu JSON.
@@ -111,7 +111,7 @@ async function factCheck(lesson) {
 3. Oprav češtinu, překlepy a neobratné věty. Zachovej styl a délku.
 4. Zachovej přesně stejnou strukturu JSON a stejné klíče.
 Vrať POUZE opravený JSON objekt.`;
-  return parseJSON(await chat([{ role: "system", content: sys }, { role: "user", content: JSON.stringify(lesson) }], 4000));
+  return parseJSON(await chat([{ role: "system", content: sys }, { role: "user", content: JSON.stringify(lesson) }], 8000));
 }
 async function proposeTopics(k) {
   const taken = [...existing].slice(-400).join("; ");
