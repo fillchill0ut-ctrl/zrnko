@@ -2,7 +2,7 @@
 // Spouští ho GitHub Actions každé ráno. Píše lekce přes bezplatné API Groq (klíč v secretu GROQ_API_KEY).
 // Umí i Mistral (MISTRAL_API_KEY) nebo OpenRouter (OPENROUTER_API_KEY), pokud je v repozitáři jejich klíč.
 // Postup: vybere témata ze zásobníku (topics.json) → napíše lekci → druhý průchod ji zkontroluje
-// a opraví fakta → ověří formát → přidá do daily.json.
+// a opraví fakta → jiný model lekci nezávisle zkontroluje a zkusí odpovědět na kvíz → co neprojde, se nezveřejní.
 // Zkušební běh bez AI: ZRNKO_MOCK=1 node scripts/generate.mjs
 import fs from "node:fs";
 import path from "node:path";
@@ -38,19 +38,21 @@ const existing = new Set([...baseTitles(), ...daily.map(d => d.title), ...daily.
 const usedTopics = new Set(daily.map(d => norm(d.topic)));
 
 // ---------- volání modelu ----------
-async function chat(messages, maxTokens) {
+async function chat(messages, maxTokens, opts = {}) {
   if (MOCK) return mockAnswer(messages);
   if (!PROVIDERS.length) throw new Error("Chybí klíč k AI. V repozitáři přidej secret GROQ_API_KEY (Settings → Secrets and variables → Actions).");
   let lastErr;
   for (const p of PROVIDERS) {
-    for (const model of p.models) {
+    // opts.alt: použij jako první jiný model než autor lekce (nezávislá kontrola)
+    const models = opts.alt && p.models.length > 1 ? [p.models[1], p.models[0], ...p.models.slice(2)] : p.models;
+    for (const model of models) {
       for (let attempt = 0; attempt < 3; attempt++) {
         try {
           await sleep(1500);
           const res = await fetch(p.url, {
             method: "POST",
             headers: { "Authorization": "Bearer " + p.key, "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify({ model, messages, temperature: 0.4, max_tokens: maxTokens, response_format: { type: "json_object" } })
+            body: JSON.stringify({ model, messages, temperature: opts.temp ?? 0.4, max_tokens: maxTokens, response_format: { type: "json_object" } })
           });
           if (res.status === 429) { lastErr = new Error(p.name + " " + model + ": limit požadavků (429)"); await sleep(30000); continue; }
           if (!res.ok) { lastErr = new Error(p.name + " " + model + ": HTTP " + res.status + " " + (await res.text()).slice(0, 300)); break; }
@@ -76,6 +78,8 @@ function parseJSON(text) {
 const STYLE = `Píšeš lekce pro českou vzdělávací aplikaci Zrnko. Čtenář je zvídavý dospělý bez odborného vzdělání, čte na mobilu místo scrollování sociálních sítí.
 PRAVIDLA OBSAHU:
 - Používej jen ověřená, obecně přijímaná fakta (učebnice, encyklopedie, odborný konsenzus). Nic si nevymýšlej.
+- Raději méně faktů, ale stoprocentně jistých. Přesná čísla, data a jména uváděj jen tehdy, když jsou všeobecně známá a ověřitelná.
+- Dávej pozor na odborné pojmy a jejich přesný význam (např. síň × komora, virus × bakterie, počasí × podnebí) a na směry dějů (co kam teče, co co způsobuje).
 - Když si číslem, datem, jménem nebo citátem nejsi jistý, napiš to obecněji („kolem roku…“, „zhruba…“) nebo to vynech.
 - Nevkládej doslovné citáty, které nedokážeš ověřit. Žádná aktuální politika ani zprávy z posledních let.
 - Kde je věc sporná nebo vědci neví, řekni to.
@@ -112,6 +116,31 @@ async function factCheck(lesson) {
 4. Zachovej přesně stejnou strukturu JSON a stejné klíče.
 Vrať POUZE opravený JSON objekt.`;
   return parseJSON(await chat([{ role: "system", content: sys }, { role: "user", content: JSON.stringify(lesson) }], 8000));
+}
+// Nezávislý auditor: jiný model hledá věcné chyby.
+async function audit(lesson) {
+  const sys = `Jsi přísný odborný recenzent. Dostaneš vzdělávací lekci v češtině ve formátu JSON.
+Najdi VŠECHNY věcné chyby: nepravdivá tvrzení, špatná čísla, data a jména, zaměněné odborné pojmy, obrácené směry dějů a příčin, zavádějící zjednodušení, chybná přirovnání a otázky kvízu, jejichž označená správná odpověď (index "c", číslováno od 0) není jednoznačně správná, nebo kde je správných odpovědí víc.
+Neřeš styl ani češtinu. Neuváděj věci, které jsou pravdivé. Když si nejsi jistý, zda je tvrzení pravdivé, uveď ho jako problém s důvodem "nejisté".
+Vrať POUZE JSON: {"problems":[{"kde":"karta 2 / otázka 1 / …","tvrzeni":"citace","proc":"co je špatně","oprava":"správné znění"}]}. Když je vše v pořádku, vrať {"problems":[]}.`;
+  const j = parseJSON(await chat([{ role: "system", content: sys }, { role: "user", content: JSON.stringify(lesson) }], 6000, { alt: true, temp: 0.1 }));
+  return (Array.isArray(j.problems) ? j.problems : []).filter(x => x && (x.tvrzeni || x.proc));
+}
+// Slepý test kvízu: jiný model odpoví na otázky bez znalosti správné odpovědi.
+async function blindQuiz(lesson) {
+  const text = lesson.cards.map(c => [c.h, ...(c.p || []), c.tip || "", c.remember || ""].join(" ")).join("\n");
+  const qs = lesson.quiz.map((q, i) => `${i + 1}. ${q.q}\n` + q.a.map((a, k) => `   ${k}) ${a}`).join("\n")).join("\n");
+  const sys = `Odpověz na kvízové otázky. Řiď se textem lekce a všeobecně platnými fakty. U každé otázky vyber index (číslo před závorkou) jediné správné odpovědi. Vrať POUZE JSON {"answers":[index, index, …]} ve stejném pořadí jako otázky.`;
+  const j = parseJSON(await chat([{ role: "system", content: sys }, { role: "user", content: "LEKCE:\n" + text + "\n\nOTÁZKY:\n" + qs }], 4000, { alt: true, temp: 0 }));
+  const ans = Array.isArray(j.answers) ? j.answers.map(n => parseInt(n, 10)) : [];
+  return lesson.quiz.map((q, i) => ans[i] === q.c ? null : { kde: "otázka " + (i + 1), tvrzeni: q.q, proc: `nezávislý test vybral odpověď „${q.a[ans[i]] ?? "žádnou"}“, ale označená je „${q.a[q.c]}“; otázka nebo odpovědi nejsou jednoznačné`, oprava: "přeformuluj otázku nebo možnosti tak, aby byla správná jen jedna odpověď a vyplývala z lekce" }).filter(Boolean);
+}
+// Oprava podle nalezených problémů.
+async function fixLesson(lesson, problems) {
+  const sys = `Jsi redaktor české vzdělávací aplikace. Dostaneš lekci (JSON) a seznam věcných problémů od recenzenta.
+Oprav každý problém. Pokud správné znění neznáš jistě, sporné tvrzení odstraň nebo napiš obecněji. U kvízu oprav otázku nebo možnosti tak, aby byla jediná správná odpověď a index "c" na ni ukazoval. Zachovej strukturu, klíče, styl a přibližnou délku.
+Vrať POUZE opravený JSON objekt lekce.`;
+  return parseJSON(await chat([{ role: "system", content: sys }, { role: "user", content: JSON.stringify({ lekce: lesson, problemy: problems }) }], 8000));
 }
 async function proposeTopics(k) {
   const taken = [...existing].slice(-400).join("; ");
@@ -157,8 +186,9 @@ async function main() {
   }
   // střídání kategorií: nevybírej dvakrát stejnou kategorii za den
   const picked = [];
-  for (const t of queue) { if (picked.length >= need + 2) break; if (!picked.some(p => p.cat === t.cat)) picked.push(t); }
-  for (const t of queue) { if (picked.length >= need + 2) break; if (!picked.includes(t)) picked.push(t); }
+  const MAX = need + 4;
+  for (const t of queue) { if (picked.length >= MAX) break; if (!picked.some(p => p.cat === t.cat)) picked.push(t); }
+  for (const t of queue) { if (picked.length >= MAX) break; if (!picked.includes(t)) picked.push(t); }
 
   let made = 0;
   for (const topic of picked) {
@@ -169,6 +199,19 @@ async function main() {
       let final = draft;
       try { final = validate(await factCheck(draft), topic); console.log("  kontrola faktů: hotovo"); }
       catch (e) { console.log("  kontrola faktů selhala, lekci přeskakuji:", e.message); continue; }
+      // přísná nezávislá kontrola: auditor + slepý test kvízu, max. 2 kola oprav
+      let ok = false;
+      try {
+        for (let round = 1; round <= 3; round++) {
+          const problems = [...await audit(final), ...await blindQuiz(final)];
+          if (!problems.length) { ok = true; console.log(`  nezávislá kontrola: bez chyb (kolo ${round})`); break; }
+          console.log(`  nezávislá kontrola, kolo ${round}: ${problems.length} problémů`);
+          problems.slice(0, 6).forEach(p => console.log(`    - ${p.kde || ""}: ${String(p.proc || "").slice(0, 160)}`));
+          if (round === 3) break;
+          final = validate(await fixLesson(final, problems), topic);
+        }
+      } catch (e) { console.log("  nezávislá kontrola selhala:", e.message); }
+      if (!ok) { console.log("  lekce neprošla kontrolou, nezveřejňuji ji"); continue; }
       if (existing.has(norm(final.title))) { console.log("  stejný název už existuje, přeskakuji"); continue; }
       const id = `d-${today}-${doneToday + made + 1}`;
       daily.push({ id, date: today, topic: topic.t, ai: true, ...final });
@@ -187,6 +230,9 @@ function mockAnswer(messages) {
   const sys = messages[0].content;
   if (sys.startsWith("Navrhuješ")) return JSON.stringify({ topics: [{ cat: "veda", t: "Zkušební téma " + Date.now() }] });
   if (sys.startsWith("Jsi pečlivý")) return messages[1].content;
+  if (sys.startsWith("Jsi přísný")) return JSON.stringify({ problems: [] });
+  if (sys.startsWith("Odpověz na kvízové")) return JSON.stringify({ answers: [0, 0, 0, 0, 0] });
+  if (sys.startsWith("Jsi redaktor")) return JSON.stringify(JSON.parse(messages[1].content).lekce);
   const topic = (messages[1].content.match(/Téma lekce: (.*)/) || [])[1] || "Zkouška";
   const cat = (messages[1].content.match(/Kategorie \(cat\): (\w+)/) || [])[1] || "veda";
   const card = (i, last) => Object.assign({ h: "Karta " + i, p: ["Zkušební odstavec o tématu " + topic + " s **důležitým pojmem**.", "Druhý odstavec s [[pojmem|vysvětlení pojmu]]."] }, i === 1 ? { an: "Zkušební přirovnání." } : {}, i === 2 ? { ln: "Zkušební souvislost." } : {}, last ? { remember: "Zkušební shrnutí." } : {});
