@@ -1,5 +1,6 @@
 // Zrnko – generátor denních lekcí.
-// Spouští ho GitHub Actions každé ráno. Používá bezplatné GitHub Models přes GITHUB_TOKEN.
+// Spouští ho GitHub Actions každé ráno. Píše lekce přes bezplatné API Mistral AI (klíč v secretu MISTRAL_API_KEY).
+// Volitelně umí i Groq (GROQ_API_KEY) nebo OpenRouter (OPENROUTER_API_KEY), když Mistral nejde.
 // Postup: vybere témata ze zásobníku (topics.json) → napíše lekci → druhý průchod ji zkontroluje
 // a opraví fakta → ověří formát → přidá do daily.json.
 // Zkušební běh bez AI: ZRNKO_MOCK=1 node scripts/generate.mjs
@@ -7,14 +8,19 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const TOKEN = process.env.GITHUB_TOKEN || "";
 const MOCK = process.env.ZRNKO_MOCK === "1";
 const PER_DAY = Math.max(1, Math.min(5, parseInt(process.env.ZRNKO_PER_DAY || "2", 10)));
-const MODELS = (process.env.ZRNKO_MODELS || "openai/gpt-4.1,openai/gpt-4o,openai/gpt-4.1-mini,openai/gpt-4o-mini")
-  .split(",").map(s => s.trim()).filter(Boolean);
-const ENDPOINT = "https://models.github.ai/inference/chat/completions";
+const PROVIDERS = [
+  { name: "Mistral", key: process.env.MISTRAL_API_KEY, url: "https://api.mistral.ai/v1/chat/completions",
+    models: ["mistral-large-latest", "mistral-medium-latest", "mistral-small-latest"] },
+  { name: "Groq", key: process.env.GROQ_API_KEY, url: "https://api.groq.com/openai/v1/chat/completions",
+    models: ["llama-3.3-70b-versatile"] },
+  { name: "OpenRouter", key: process.env.OPENROUTER_API_KEY, url: "https://openrouter.ai/api/v1/chat/completions",
+    models: ["meta-llama/llama-3.3-70b-instruct:free"] }
+].filter(p => p.key);
 const CATS = ["veda","telo","dejiny","literatura","umeni","jazyk","mytologie","sport","jak","priroda","vesmir","ekonomie"];
 const today = process.env.ZRNKO_DATE || new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Prague" });
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 const readJSON = (f, d) => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, f), "utf8")); } catch { return d; } };
 const daily = readJSON("daily.json", []);
@@ -27,31 +33,34 @@ function baseTitles() {
     return (win.LESSONS || []).map(l => l.title);
   } catch { return []; }
 }
-const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
 const existing = new Set([...baseTitles(), ...daily.map(d => d.title), ...daily.map(d => d.topic)].map(norm));
 const usedTopics = new Set(daily.map(d => norm(d.topic)));
 
 // ---------- volání modelu ----------
 async function chat(messages, maxTokens) {
   if (MOCK) return mockAnswer(messages);
-  if (!TOKEN) throw new Error("Chybí GITHUB_TOKEN. Ve workflow musí být oprávnění models: read.");
+  if (!PROVIDERS.length) throw new Error("Chybí klíč k AI. V repozitáři přidej secret MISTRAL_API_KEY (Settings → Secrets and variables → Actions).");
   let lastErr;
-  for (const model of MODELS) {
-    for (let attempt = 0; attempt < 2; attempt++) {
-      try {
-        const res = await fetch(ENDPOINT, {
-          method: "POST",
-          headers: { "Authorization": "Bearer " + TOKEN, "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify({ model, messages, temperature: 0.4, max_tokens: maxTokens, response_format: { type: "json_object" } })
-        });
-        if (res.status === 429) { lastErr = new Error(model + ": limit požadavků (429)"); break; }
-        if (!res.ok) { lastErr = new Error(model + ": HTTP " + res.status + " " + (await res.text()).slice(0, 300)); continue; }
-        const data = await res.json();
-        const text = data?.choices?.[0]?.message?.content;
-        if (!text) { lastErr = new Error(model + ": prázdná odpověď"); continue; }
-        console.log("  model:", model);
-        return text;
-      } catch (e) { lastErr = e; }
+  for (const p of PROVIDERS) {
+    for (const model of p.models) {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          await sleep(1500);
+          const res = await fetch(p.url, {
+            method: "POST",
+            headers: { "Authorization": "Bearer " + p.key, "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({ model, messages, temperature: 0.4, max_tokens: maxTokens, response_format: { type: "json_object" } })
+          });
+          if (res.status === 429) { lastErr = new Error(p.name + " " + model + ": limit požadavků (429)"); await sleep(15000); continue; }
+          if (!res.ok) { lastErr = new Error(p.name + " " + model + ": HTTP " + res.status + " " + (await res.text()).slice(0, 300)); break; }
+          const data = await res.json();
+          const text = data?.choices?.[0]?.message?.content;
+          if (!text) { lastErr = new Error(p.name + " " + model + ": prázdná odpověď"); continue; }
+          console.log("  model:", p.name, model);
+          return text;
+        } catch (e) { lastErr = e; }
+      }
     }
   }
   throw lastErr || new Error("Žádný model neodpověděl.");
