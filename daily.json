@@ -124,20 +124,20 @@
     "tip": "Průměrná srdeční frekvence v klidu je 60–100 tepů za minutu."
    },
    {
-    "h": "Čtyři komory",
+    "h": "Dvě síně a dvě komory",
     "p": [
      "Srdce má čtyři oddělené prostory: pravou a levou síň a pravou a levou komoru. Mezi síněmi a komorami jsou chlopně, které zajišťují jednosměrný tok krve.",
      "Komory pumpují krev do plic a do těla, zatímco síně slouží jako rezervoár a pomáhají doplnit objem komor před stahováním."
     ],
-    "an": "Představ si dům se čtyřmi místnostmi, kde každá místnost má jednosměrnou dveřní zámku – tak se krev pohybuje jen jedním směrem."
+    "an": "Představ si dům se čtyřmi místnostmi a dveřmi, které se otevírají jen jedním směrem. Krev tak nemůže téct zpátky, stejně jako chlopně v srdci."
    },
    {
     "h": "Krevní oběh",
     "p": [
      "Krev proudí dvěma hlavními okruzy: **systémový** oběh, který zásobuje tělesné tkáně, a **plicní** oběh, který okysličuje krev v plicích.",
-     "Oběhy jsou propojeny velkými cévami – aortou a plicní tepnou – a krev se vrací zpět do srdce žilami."
+     "Z pravé komory vede krev **plicní tepnou** do plic a z levé komory **aortou** do celého těla. Zpátky do srdce se krev vrací žilami."
     ],
-    "ln": "Tato souvislost ukazuje, proč se krev vrací do plic po každém srdečním cyklu.",
+    "ln": "Pravá polovina srdce tedy obsluhuje plicní oběh a levá tělní, proto je stěna levé komory mnohem silnější.",
     "tip": "Celkový objem krve v těle dosahuje zhruba 5 litrů."
    },
    {
@@ -155,7 +155,7 @@
      "Nejčastějším způsobem je měření **tepové frekvence** na zápěstí nebo krku. Moderní nositelná zařízení používají optické senzory k detekci pulsu.",
      "Další metodou je elektrokardiogram (EKG), který zaznamenává elektrickou aktivitu srdce a pomáhá diagnostikovat arytmie."
     ],
-    "remember": "Srdce pumpuje krev díky čtyřem komorám, elektrickému impulsu a pravidelnému střídání systoly a diastoly."
+    "remember": "Srdce má čtyři dutiny: dvě síně a dvě komory. Pumpuje krev dvěma oběhy, plicním a tělním, a jeho rytmus řídí elektrický impuls ze sinoatriálního uzlu."
    }
   ],
   "quiz": [
@@ -165,10 +165,10 @@
      "2",
      "3",
      "4",
-     "5"
+     "1"
     ],
-    "c": 2,
-    "why": "Srdce má pravou a levou síň i pravou a levou komoru, celkem čtyři."
+    "c": 0,
+    "why": "Srdce má dvě komory a dvě síně, tedy celkem čtyři dutiny."
    },
    {
     "q": "Která fáze je charakterizována uvolněním srdečního svalu?",
@@ -182,7 +182,7 @@
     "why": "Diastola je období, kdy se myokard uvolňuje a komory se plní krví."
    },
    {
-    "q": "Která chlopeň zabraňuje zpětnému toku krve z levé síně do levé komory?",
+    "q": "Která chlopeň brání tomu, aby krev tekla z levé komory zpět do levé síně?",
     "a": [
      "Mitrální",
      "Aortální",
@@ -190,7 +190,7 @@
      "Trikuspidální"
     ],
     "c": 0,
-    "why": "Mitrální (bikuspidální) chlopeň odděluje levou síň od levé komory."
+    "why": "Mitrální (dvojcípá) chlopeň leží mezi levou síní a levou komorou a propouští krev jen směrem do komory."
    },
    {
     "q": "Kde vzniká první elektrický impuls, který řídí srdeční rytmus?",
