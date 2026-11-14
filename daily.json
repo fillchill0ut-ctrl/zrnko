@@ -334,5 +334,128 @@
     "why": "Oheň byl ukraden Prométheem, ne dar od Dia."
    }
   ]
+ },
+ {
+  "id": "d-2026-11-14-1",
+  "date": "2026-11-14",
+  "topic": "Proč padla Západořímská říše",
+  "ai": true,
+  "cat": "dejiny",
+  "title": "Proč padla Západořímská říše?",
+  "sub": "Klíčové faktory úpadku západní části říše",
+  "cards": [
+   {
+    "h": "Nestabilní vedení",
+    "p": [
+     "Po smrti císaře Marca Aurelia v roce 180 n.l. nastoupil na trůn jeho syn Commodus. Po jeho vraždě v roce 192 nastalo období rychlých změn a politické nestability, během kterého se v následujících desetiletích střídalo mnoho císařů, často násilně. Vnitřní boje oslabily centrální autoritu.",
+     "Vojenské vůdce a senátoři často podporovali své kandidáty, což vedlo k občanským válkám. Korupce a zneužívání moci se staly běžnými. Lidé ztráceli důvěru v římskou vládu.",
+     "V letech 235‑284 nastoupilo více než dvacet císařů, z nichž mnoho zemřelo během několika měsíců. Toto období je označováno jako krize třetího století. Politická nejistota podkopávala schopnost státu reagovat na vnější hrozby."
+    ],
+    "an": "Představ si firmu, kde se na pozici generálního ředitele střídají noví lidé každé dva měsíce – zaměstnanci už neví, komu mají poslouchat."
+   },
+   {
+    "h": "Ekonomické potíže",
+    "p": [
+     "Vysoké daně a drahé války vyčerpaly státní pokladny. Zemědělská produkce klesala kvůli neúrodným letům a nedostatku pracovních sil. Obchodní cesty byly narušeny barbarickými útoky.",
+     "Císař Aurelian zkusil stabilizovat měnu, ale **debasement** (zředění mince) už byl rozšířen. To vedlo k inflaci, která znehodnocovala úspory obyčejných lidí. Ceny zboží rostly a kupní síla klesala.",
+     "Ztráta příjmů z provincií v severní Africe po dobytí Vandalů a částečná ztráta území v Hispánii snížila možnosti financovat armádu. Státní úspory se vyčerpaly a říše se musela spoléhat na půjčky. Ekonomický tlak zhoršil i schopnost udržet silná opevnění."
+    ],
+    "ln": "Tyto politické otřesy zhoršily hospodaření státu a přispěly k finanční krizi.",
+    "tip": "V roce 274 n. l. císař Aurelian zavedl novou měnu, ale inflace už byla hluboce zakořeněna."
+   },
+   {
+    "h": "Vojenská zátěž",
+    "p": [
+     "Římské legie musely bránit dlouhé hranice na severu i východě. Stálé boje vyčerpávaly náborové zdroje a zvyšovaly náklady na výzbroj. Východní provincie čelily častým útokům Sásánů a Germánů.",
+     "Aby udržela armádu, říše najímala **žoldnéře** z germánských kmenů. Tito bojovníci často sloužili jen za peníze a jejich loajalita byla křehká. Některé jednotky se po zaplacení obrátily proti Římanům.",
+     "Ztráta disciplíny a jednotnosti ztížila rychlé reakce na náhlé invaze. Vojenské výdaje převyšovaly příjmy a přispívaly k dalšímu zadlužení. Slabší armáda už nedokázala udržet stabilitu v provinčních městech."
+    ],
+    "an": "Je to jako sportovní tým, který najme mnoho náhradníků, ale už nemá dostatek času na trénink a taktiku."
+   },
+   {
+    "h": "Barbarské migrace",
+    "p": [
+     "V 4. století se pod tlakem hunských kočovníků posunuly germánské kmeny jako Vizigóti a Vandalové směrem k římským hranicím. Tyto migrace vytvářely tlak na obranné linie a zvyšovaly počet konfliktů.",
+     "Když římské vojsko selhalo, kmeny pronikly do provincií a zakládaly si vlastní území. V roce 410 svedli Vizigóti pod vedením Alarica dobyté Řím. Podobně Vandalové v roce 455 přepadli město a odnesli cennosti.",
+     "Barbarské království se postupně rozšiřovalo na území bývalé říše. Mnoho území tak přestalo podléhat římské správě a místo toho se vytvořily nové politické struktury. Tyto změny podkopaly jednotu Západořímské říše."
+    ],
+    "an": "Představ si přehradu, která najednou praskne a voda zalévá okolní pole – řeka už nedokáže kontrolovat svůj tok.",
+    "tip": "V roce 410 Vizigóti pod Alaricem svedli Řím, což bylo první dobytí města za více než 800 let."
+   },
+   {
+    "h": "Rozdělení říše",
+    "p": [
+     "Dioklecián na přelomu 3. a 4. století zavedl **tetrarchii**, čtyři vládci sdíleli moc, aby lépe řídili rozlehlé území. Tento systém však vytvořil nová mocenská centra a rivalitu mezi nimi.",
+     "Po smrti Theodosiuse I. v roce 395 se říše oficiálně rozdělila na Západ a Východ. Západní část měla slabší ekonomiku a méně obyvatel. Východní část, později známá jako Byzantská říše, měla bohatší města a silnější armádu.",
+     "Rozdělení ztížilo koordinaci obrany a umožnilo barbarským skupinám vyjednávat s jednou částí proti druhé. Západní císařové často postrádali prostředky k odrazení nájezdů. Východní říše přežila až do roku 1453, zatímco Západ padl."
+    ],
+    "ln": "Zatímco východní část dokázala odolávat, západní část čelila vlně barbarských útoků a interním slabostem.",
+    "tip": "Byzantská říše (východní) přežila až do roku 1453, kdy padla do rukou Osmanské říše."
+   },
+   {
+    "h": "Co nakonec přivedlo pád?",
+    "p": [
+     "Kombinace politické nestability, ekonomické krize, vojenské zátěže a barbarských nájezdů oslabila Západořímskou říši po staletí. Každý faktor se vzájemně posiloval a ztěžoval řešení ostatních.",
+     "V roce 476 n. l. poslední západní císař Romulus Augustulus byl sesazen germánským vojevůdcem Odoakrem. Odoaker se stal de facto vládcem Itálie a uznal nadvládu východního císaře. Tento okamžik je tradičně označován jako konec Západořímské říše.",
+     "Pád říše zanechal politické a kulturní dědictví, které formovalo středověkou Evropu. Římské právo, jazyk a infrastruktura přežily v nových královstvích. Historici však souhlasí, že žádný jediný faktor nezpůsobil pád, ale jejich souhrnný dopad."
+    ],
+    "remember": "Západořímská říše padla kvůli souběhu politické nestability, ekonomických potíží, vojenských slabostí a barbarských nájezdů, které se navzájem posilovaly."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Který faktor nejvíce přispěl k oslabení římské armády ve 4. století?",
+    "a": [
+     "Zvýšená loajalita legionářů",
+     "Najímání germánských žoldníků",
+     "Rozvoj námořnictva",
+     "Zavedení nových taktik"
+    ],
+    "c": 1,
+    "why": "Říše najímala germánské žoldníky, jejichž loajalita byla křehká a oslabovala armádu."
+   },
+   {
+    "q": "Co znamená pojem **debasement** v kontextu římské ekonomiky?",
+    "a": [
+     "Zvýšení hodnoty mince",
+     "Zředění obsahu drahých kovů v mincích",
+     "Zavedení nových daní",
+     "Rozšíření obchodu s východními provinciemi"
+    ],
+    "c": 1,
+    "why": "Debasement označuje zředění obsahu drahých kovů v mincích, což vedlo k inflaci."
+   },
+   {
+    "q": "Jaký byl hlavní důsledek Diokleciánovy tetrarchie?",
+    "a": [
+     "Jednotná vláda pod jedním císařem",
+     "Rozdělení moci mezi čtyři vládce a vznik nových rivalit",
+     "Zrušení daní",
+     "Zavedení křesťanství jako státního náboženství"
+    ],
+    "c": 1,
+    "why": "Tetrarchie rozdělila moc mezi čtyři vládce, což vytvořilo nové mocenské střety."
+   },
+   {
+    "q": "Která událost je tradičně považována za konec Západořímské říše?",
+    "a": [
+     "Pád Konstantinopole",
+     "Sesazení Romula Augustula v roce 476",
+     "Bitva u Actia",
+     "Založení Byzantské říše"
+    ],
+    "c": 1,
+    "why": "Sesazení posledního západního císaře Romula Augustula v roce 476 je považováno za konec Západořímské říše."
+   },
+   {
+    "q": "Pravda nebo nepravda: Východní část říše po rozdělení v roce 395 byla ekonomicky slabší než Západ.",
+    "a": [
+     "Pravda",
+     "Nepravda"
+    ],
+    "c": 1,
+    "why": "Východní část (Byzantská říše) měla bohatší města a silnější ekonomiku než Západ."
+   }
+  ]
  }
 ]
