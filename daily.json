@@ -457,5 +457,129 @@
     "why": "Východní část (Byzantská říše) měla bohatší města a silnější ekonomiku než Západ."
    }
   ]
+ },
+ {
+  "id": "d-2026-11-19-1",
+  "date": "2026-11-19",
+  "topic": "Proč se renesance zrodila v Itálii",
+  "ai": true,
+  "cat": "umeni",
+  "title": "Proč se renesance zrodila v Itálii?",
+  "sub": "Klíčové podmínky, které umožnily rozkvět nového myšlení a umění",
+  "cards": [
+   {
+    "h": "Středobodem Středomoří",
+    "p": [
+     "Itálie leží na křižovatce obchodních cest mezi Evropou a Středomořím. Přístavy jako Benátky a Janov získaly bohatství z obchodu se zbožím i luxusními produkty. Toto bohatství vytvořilo finanční základ pro podporu umění a vědy."
+    ],
+    "an": "Představ si letiště, kde se setkává spousta letadel z celého světa – stejně tak Itálie přitahovala obchodní lodě z různých zemí."
+   },
+   {
+    "h": "Městské státy jako soutěžní aréna",
+    "p": [
+     "Itálie byla rozdělena na nezávislé městské státy, např. Florencie, Benátky a Milán. Každý stát usiloval o prestiž a chtěl předčit ostatní v architektuře, malířství a vědě. Tato soutěž vedla k častému zadávání velkých projektů.",
+     "ln",
+     ":",
+     "Obchodní bohatství umožnilo vznik bohatých městských států",
+     "které pak soupeřily o kulturní slávu."
+    ],
+    "tip": "V Benátkách byl v roce 1470 založen jedna z prvních tiskáren v Itálii, což podpořilo šíření nových myšlenek."
+   },
+   {
+    "h": "Antické kořeny na dosah",
+    "p": [
+     "Itálie je bohatá na pozůstatky římské civilizace – chrámy, sochy a knihovny. Humanisté jako Petrarca studovali antické texty a snažili se je oživit.",
+     "an",
+     ":",
+     "Je to jako když najdeš starý rodinný fotoalbum a začneš si představovat",
+     "jaký život měli tvé předci."
+    ],
+    "ln": "S rostoucím zájmem o antiku se bohaté rodiny staly hlavními podporovateli."
+   },
+   {
+    "h": "Patronát bohatých rodin",
+    "p": [
+     "Rodiny jako Medicejové ve Florencii financovali umělce, architekty a učence. Díky jejich podpoře vznikla díla od Michelangela, Leonarda da Vinciho a Brunelleschiho.",
+     "ln",
+     ":",
+     "Finanční podpora umělců se rozšířila i díky novým technologiím tisku",
+     "které šířily jejich díla."
+    ],
+    "tip": "Medicejové založili významnou soukromou knihovnu, která později přispěla k rozvoji veřejných knihoven v Evropě."
+   },
+   {
+    "h": "Nové způsoby šíření vědění",
+    "p": [
+     "Vynález knihtisku v 15. století umožnil rychlé rozmnožování knih a jejich dostupnost širšímu publiku. Univerzity v Padově a Ferraru přilákaly studenty z celé Evropy.",
+     "an",
+     ":",
+     "Představ si",
+     "že místo ručně psaných dopisů najednou můžeš poslat stovky kopií jednou tiskárnou."
+    ],
+    "ln": "Tisk a patronát společně vytvořily prostředí, kde se nové myšlenky šířily rychleji než kdy předtím."
+   },
+   {
+    "h": "Dědictví renesance",
+    "p": [
+     "Renesance přinesla důraz na **humanismus**, individuální talent a vědecký přístup. Italské inovace ovlivnily celé Evropu a položily základy moderního umění a vědy."
+    ],
+    "remember": "Itálie se stala kolébkou renesance díky své geografii, bohatým městským státům, antickému dědictví a podpoře ze strany bohatých patronů."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Kde leží Itálie?",
+    "a": [
+     "Střední Evropa",
+     "Balkán",
+     "Středomoří",
+     "Skandinávie"
+    ],
+    "c": 2,
+    "why": "Itálie je poloostrov v Středomoří, což jí poskytlo výhodnou pozici pro obchod."
+   },
+   {
+    "q": "Která italská rodina nejvíce patronovala umění?",
+    "a": [
+     "Borgia",
+     "Gonzaga",
+     "Sforza",
+     "Medicejové"
+    ],
+    "c": 3,
+    "why": "Rodina Medicejových ve Florencii financovala mnoho významných umělců."
+   },
+   {
+    "q": "Co přinesl tisk do renesance?",
+    "a": [
+     "Rychlejší šíření textů",
+     "Vyšší ceny knih",
+     "Omezení vzdělání",
+     "Zánik manuskriptů"
+    ],
+    "c": 0,
+    "why": "Tisk umožnil rychlé rozmnožování knih a jejich dostupnost širšímu publiku."
+   },
+   {
+    "q": "Jaký byl hlavní rozdíl mezi italskými městskými státy a feudálními královstvími?",
+    "a": [
+     "Centralizovaná moc",
+     "Nezávislost a soutěž",
+     "Rolnické hospodářství",
+     "Náboženská jednota"
+    ],
+    "c": 1,
+    "why": "Městské státy byly nezávislé a soutěžily o kulturní prestiž, na rozdíl od centralizovaných království."
+   },
+   {
+    "q": "Renesance vznikla v Itálii kvůli jediné příčině – přítomnosti antických ruin.",
+    "a": [
+     "Pravda",
+     "Nepravda"
+    ],
+    "c": 1,
+    "why": "Renesance byla výsledkem kombinace geografických, ekonomických a kulturních faktorů, ne jen jedné příčiny."
+   }
+  ]
  }
 ]
