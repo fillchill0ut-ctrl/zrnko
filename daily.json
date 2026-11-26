@@ -581,5 +581,124 @@
     "why": "Renesance byla výsledkem kombinace geografických, ekonomických a kulturních faktorů, ne jen jedné příčiny."
    }
   ]
+ },
+ {
+  "id": "d-2026-11-26-1",
+  "date": "2026-11-26",
+  "topic": "Co je černá díra",
+  "ai": true,
+  "cat": "vesmir",
+  "title": "Co je černá díra?",
+  "sub": "Základní fakta o nejzáhadnějších objektech vesmíru",
+  "cards": [
+   {
+    "h": "Co je **černá díra**",
+    "p": [
+     "**Černá díra** je oblast prostoru, kde je gravitační pole tak silné, že uniknout z ní nemůže ani světlo. Hlavní hranice se nazývá **událostní horizont** – jakmile něco překročí, už se nevrátí. Uvnitř horizontu se nachází **předpokládaná singularita**, oblast, kde teorie předpovídá nekonečnou hustotu a zakřivení časoprostoru.",
+     "Vytvoření černé díry začíná zhroucením hmoty, která se stlačí do velmi malého objemu. Tento proces je řízen obecnou relativitou, která popisuje, jak hmota zakřivuje prostor. Zakřivení je tak extrémní, že všechny dráhy vedou dovnitř singularity.",
+     "Proto je černá díra nejen gravitačním, ale i geometrickým jevem – prostor kolem ní se „sráží“ dovnitř. Přestože nic nevidíme, její přítomnost lze měřit nepřímými efekty, například pohybem hvězd v okolí."
+    ],
+    "an": "Představ si vodní dýmku, do které nasaješ vzduch a pak ji silně stlačíš – vzduch se už nemůže vyfouknout a hromadí se uvnitř."
+   },
+   {
+    "h": "Jak se **černá díra** tvoří",
+    "p": [
+     "Nejčastěji vzniká zhroucením jádra masivní hvězdy po vyčerpání jaderného paliva. Když hmotnost jádra překročí přibližně 2,5–3 sluneční hmotnosti (tzv. TOV‑limit), gravitační síla přemůže všechny ostatní síly a často dochází k supernově typu II, po níž jádro může zkolabovat do černé díry.",
+     "Po explozi zůstane jen vnější obal hvězdy a jádro se zhroutí do oblasti s extrémní hustotou. Tento proces se nazývá gravitační kolaps a vede k vytvoření **černé díry**.",
+     "Výsledná černá díra má hmotnost menší než původní hvězda, protože během výbuchu a větru ztrácí hvězda značnou část hmoty, a její objem je mnohem menší – typicky jen několik kilometrů v průměru."
+    ],
+    "ln": "Tento vznik navazuje na definici událostního horizontu z první karty.",
+    "tip": "První přímé pozorování gravitačních vln v roce 2015 pochází z fúze dvou černých děr."
+   },
+   {
+    "h": "Proč světlo neuniká",
+    "p": [
+     "Světlo se řídí stejnými gravitačními zákony jako hmota. V blízkosti **singularity** je zakřivení časoprostoru tak silné, že všechny světelné paprsky jsou „zakřiveny“ dovnitř.",
+     "Na událostním horizontu se rychlost úniku rovná rychlosti světla. Protože nic nemůže překonat tuto rychlost, světlo zůstane uvězněno.",
+     "Tento jev způsobuje, že černá díra je černá – nevyzařuje žádné světlo, které by mohlo dopadnout na naše detektory (kromě extrémně slabého Hawkingova záření, které je prakticky nepozorovatelné)."
+    ],
+    "an": "Je to jako když se snažíš utéct z místnosti, kde jsou dveře tak těžké, že je ani největší síla těžkých zvedáků nepohnou."
+   },
+   {
+    "h": "Jak **černé díry** odhalujeme",
+    "p": [
+     "Přestože samotné černé díry nevidíme, jejich gravitační vliv na okolní hvězdy je měřitelný. Hvězdy obíhající kolem neviditelného objektu se pohybují rychleji, než by odpovídalo viditelné hmotě.",
+     "Další metoda je **gravitační čočkování** – světlo vzdálených objektů se ohýbá kolem černé díry a vytváří charakteristické obrazy. To nám umožňuje „vidět“ černou díru nepřímo.",
+     "Nejmodernější technikou jsou **gravitační vlny**, které vznikají při sloučení dvou černých děr. Detektory LIGO a Virgo zachytily tyto vlny a potvrdily existenci černých děr."
+    ],
+    "tip": "První fotografii událostního horizontu získala spolupráce EHT v roce 2019."
+   },
+   {
+    "h": "Různé typy **černých děr**",
+    "p": [
+     "**Stelární černé díry** vznikají z hvězd o hmotnosti několika sluncí a mají hmotnost až několik desítek slunečních hmotností.",
+     "**Supermasivní černé díry** se nacházejí v centrech galaxií a váží miliony až miliardy slunečních hmotností. Jejich původ je stále předmětem výzkumu.",
+     "**Mezistřední černé díry** mají hmotnost mezi stelárními a supermasivními, ale jsou nejméně četné a těžko pozorovatelné."
+    ],
+    "ln": "Tento přehled doplňuje předchozí kapitolu o metodách detekce, protože různé typy vyžadují různé techniky."
+   },
+   {
+    "h": "Shrnutí",
+    "p": [
+     "**Černá díra** je oblast s extrémní gravitací, kde událostní horizont odděluje vnitřek od vnějšího vesmíru."
+    ],
+    "remember": "Černé díry vznikají zhroucením hmoty, mají tak silnou gravitaci, že ani světlo neunikne, a odhalujeme je nepřímými efekty, jako jsou pohyby hvězd, čočkování a gravitační vlny."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Co označuje pojem **událostní horizont**?",
+    "a": [
+     "Oblast, kde se světlo pohybuje rychleji než obvykle",
+     "Hranice, za kterou už nic nemůže uniknout",
+     "Povrch černé díry, kde se nachází singularita",
+     "Místo, kde se tvoří hvězdy"
+    ],
+    "c": 1,
+    "why": "Událostní horizont je hranice, za kterou už nic, ani světlo, nemůže uniknout."
+   },
+   {
+    "q": "Jaký je hlavní způsob vzniku **stelární černé díry**?",
+    "a": [
+     "Srážka dvou planet",
+     "Kolaps jádra masivní hvězdy po supernově",
+     "Zpomalení rotace galaxie",
+     "Akumulace temné hmoty"
+    ],
+    "c": 1,
+    "why": "Stelární černé díry vznikají kolapsem jádra hvězdy, která po supernově překročí kritickou hmotnost."
+   },
+   {
+    "q": "Proč světlo nemůže uniknout z černé díry?",
+    "a": [
+     "Je absorbováno částicemi v horizontu",
+     "Je zakřiveno tak, že se vrací dovnitř",
+     "Ztrácí energii při průchodu gravitačním polem",
+     "Mění se na temnou hmotu"
+    ],
+    "c": 1,
+    "why": "Gravitační zakřivení časoprostoru je tak silné, že všechny světelné paprsky jsou odváděny dovnitř."
+   },
+   {
+    "q": "Který typ černé díry má hmotnost řádově miliardy Sluncí?",
+    "a": [
+     "Stelární",
+     "Mezistřední",
+     "Supermasivní",
+     "Primordiální"
+    ],
+    "c": 2,
+    "why": "Supermasivní černé díry, nacházející se v centrech galaxií, mají hmotnost miliony až miliardy sluncí."
+   },
+   {
+    "q": "Černé díry jsou jen teoretické objekty, které nebyly nikdy pozorovány.",
+    "a": [
+     "Pravda",
+     "Nepravda"
+    ],
+    "c": 1,
+    "why": "Existence černých děr byla potvrzena pozorováním gravitačních vln, pohybů hvězd a fotografií událostního horizontu."
+   }
+  ]
  }
 ]
