@@ -700,5 +700,125 @@
     "why": "Existence černých děr byla potvrzena pozorováním gravitačních vln, pohybů hvězd a fotografií událostního horizontu."
    }
   ]
+ },
+ {
+  "id": "d-2026-11-27-1",
+  "date": "2026-11-27",
+  "topic": "Proč je Švejk slavný po celém světě",
+  "ai": true,
+  "cat": "literatura",
+  "title": "Proč je Švejk slavný po celém světě",
+  "sub": "Jak se český antihrdina stal globálním symbolem humoru",
+  "cards": [
+   {
+    "h": "Autor a vznik",
+    "p": [
+     "Jaroslav Hašek se narodil na konci 19. století v Praze.",
+     "V letech 1914‑1918 prožil první světovou válku a později napsal román, který vyšel v letech 1921‑1923.",
+     "Kniha je **satirou** na vojenskou byrokracii a absurditu války."
+    ]
+   },
+   {
+    "h": "Postava dobrého vojáka",
+    "p": [
+     "Švejk je jednoduchý, ale mazaný voják, který se zdánlivě podřizuje rozkazům.",
+     "Jeho chování často odhaluje nesmyslnost velení a lidskou hloupost.",
+     "Čtenář ho vnímá jako hrdinu i komika."
+    ],
+    "an": "Představ si, že v supermarketu neustále posloucháš pokyny pokladní, i když jsou zjevně nesmyslné – stejně jako Švejk plní rozkazy, i když jsou absurdní."
+   },
+   {
+    "h": "Jazyk a humor",
+    "p": [
+     "Hašek používá hovorový jazyk, dialekty a neformální výrazy.",
+     "Humor vzniká z **ironie** a záměrného nedorozumění mezi postavami.",
+     "Kniha je plná krátkých anekdot a vtipných dialogů."
+    ],
+    "tip": "V českém jazyce se pojem „švejkovat“ používá pro chytrost skrývající se za naivitou."
+   },
+   {
+    "h": "Překlady do světa",
+    "p": [
+     "Do angličtiny, němčiny a francouzštiny byla kniha přeložena již v 20. a 30. letech 20. století.",
+     "Překladatelé zachovali hašekův specifický humor, i když některé slovní hříčky zůstaly těžko přenositelné.",
+     "Díky tomu se Švejk stal známým i mimo české čtenáře."
+    ],
+    "ln": "Překlady rozšířily humor, který byl představen v první kartě."
+   },
+   {
+    "h": "Filmy, divadlo a další",
+    "p": [
+     "V roce 1956 vznikl slavný československý film režiséra Jiřího Menzela.",
+     "Divadelní inscenace a rozhlasové hry přinesly Švejkovi další publikum.",
+     "Postava se objevila i v komiksech a videohrách."
+    ],
+    "an": "Je to jako když oblíbený příběh z knihy přetavíš do filmu – každý médium přidá nový rozměr.",
+    "ln": "Film a divadlo ukázaly, jak se humor z knihy přenáší do vizuální podoby."
+   },
+   {
+    "h": "Trvalý odkaz",
+    "p": [
+     "Švejk se stal symbolem české odolnosti a schopnosti se smát i v těžkých časech.",
+     "Jeho jméno nosí i řada kulturních akcí a veřejných soch.",
+     "Díky tomu je Švejk stále živý v mezinárodním povědomí."
+    ],
+    "remember": "Švejk je světově známý díky svému jedinečnému humoru, který kritizuje absurditu a oslavuje lidskou vynalézavost."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Kdo napsal Švejka?",
+    "a": [
+     "Jaroslav Hašek",
+     "Franz Kafka",
+     "Karel Čapek",
+     "Milan Kundera"
+    ],
+    "c": 0,
+    "why": "Hašek je autorem románu **Dobrý voják Švejk**."
+   },
+   {
+    "q": "V jakém období se odehrává původní příběh?",
+    "a": [
+     "První světová válka",
+     "Druhá světová válka",
+     "Napoleonské války",
+     "Studená válka"
+    ],
+    "c": 0,
+    "why": "Příběh sleduje Švejka během první světové války."
+   },
+   {
+    "q": "Co znamená český výraz „švejkovat“?",
+    "a": [
+     "Být nešikovný",
+     "Chytře využívat naivitou",
+     "Být vážný",
+     "Překládat text"
+    ],
+    "c": 1,
+    "why": "Výraz odkazuje na Švejkovo chytrost skrývající se za zdánlivou naivitou."
+   },
+   {
+    "q": "Který režisér natočil slavný film o Švejkovi v 1956?",
+    "a": [
+     "Jiří Menzel",
+     "Miloš Forman",
+     "Věra Chytilová",
+     "Karel Kachyňa"
+    ],
+    "c": 0,
+    "why": "Film z roku 1956 režíroval Jiří Menzel."
+   },
+   {
+    "q": "Švejk byl původně napsán jako vážná válečná literatura.",
+    "a": [
+     "Pravda",
+     "Nepravda"
+    ],
+    "c": 1,
+    "why": "Kniha je satirou, ne vážnou literaturou."
+   }
+  ]
  }
 ]
